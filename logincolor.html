@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <title>Tailwind + Flowbite</title>
+</head>
+ <body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fshriders Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(135deg,
+                    #062b91,
+                    #008cff,
+                    #0634b8,
+                    #2410a8
+                );
+
+            overflow-x: hidden;
+        }
+
+        /* Main Card */
+        .login-card {
+            width: 100%;
+            max-width: 700px;
+
+            padding: 15px 20px;
+
+            background: rgba(235, 248, 255, 0.94);
+
+            border-radius: 35px;
+
+            border: 2px solid #7ddcff;
+
+            box-shadow:
+                0 0 30px rgba(0, 217, 255, 0.7),
+                0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Logo */
+        .logo {
+            display: block;
+
+            width: 360px;
+            max-width: 90%;
+
+            margin: -100px auto 15px;
+
+            filter:
+                drop-shadow(0 10px 10px rgba(0, 60, 180, 0.4));
+        }
+
+        /* Text */
+        .subtitle {
+            text-align: center;
+
+            font-size: 27px;
+            font-weight: bold;
+
+            color: #09265e;
+
+            margin-bottom: 35px;
+        }
+
+        /* Input */
+        .input-box {
+            width: 100%;
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+
+            background: white;
+
+            border: 2px solid #a7d4f5;
+
+            border-radius: 18px;
+
+            padding: 0 20px;
+
+            margin-bottom: 20px;
+
+            box-shadow: 0 3px 10px rgba(0, 90, 180, 0.08);
+        }
+
+        .icon {
+            font-size: 30px;
+            width: 55px;
+            color: #0754a8;
+        }
+
+        .input-box input {
+            flex: 1;
+
+            border: none;
+            outline: none;
+
+            font-size: 20px;
+
+            color: #193e70;
+        }
+
+        .input-box input::placeholder {
+            color: #58779c;
+        }
+
+        .eye {
+            cursor: pointer;
+
+            font-size: 25px;
+
+            color: #175a9d;
+        }
+
+        /* Login Button */
+        .login-button {
+            width: 80%;
+            height: 70px;
+
+            border: none;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00aef0,
+                    #0878ed,
+                    #3924e8
+                );
+
+            color: white;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 20px rgba(0, 100, 255, 0.35);
+
+            transition: 0.3s;
+        }
+
+        .login-button:hover {
+            transform: scale(1.00);
+        }
+
+        /* OR */
+        .or {
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            margin: 30px 0;
+
+            color: #57769a;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        .or::before,
+        .or::after {
+            content: "";
+
+            flex: 1;
+
+            height: 2px;
+
+            background: #b8d5ee;
+        }
+
+        /* Create Account */
+        .create-button {
+            width: 65%;
+            height: 60px;
+
+            display: block;
+
+            margin: auto;
+
+            background: transparent;
+
+            border: 2px solid #0878ed;
+
+            border-radius: 35px;
+
+            color: #0878ed;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .create-button:hover {
+            background: #e3f4ff;
+        }
+
+        /* Third Party */
+        .support {
+            text-align: center;
+
+            margin: 30px 0 18px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #526f93;
+        }
+
+        /* Social buttons */
+        .social-buttons {
+            display: flex;
+
+            gap: 18px;
+        }
+
+        .social-button {
+            flex: 1;
+
+            height: 60px;
+
+            border-radius: 32px;
+
+            border: 2px solid #b8d8f2;
+
+            background: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            color: #173d70;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .social-button:hover {
+            background: #edf8ff;
+
+            transform: translateY(-2px);
+        }
+
+        .google-icon {
+            color: #4285f4;
+            font-size: 22px;
+        }
+
+        .facebook-icon {
+            color: #1877f2;
+            font-size: 22px;
+        }
+
+        /* Message */
+        #message {
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #0878ed;
+
+            font-weight: bold;
+
+            font-size: 17px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .login-card {
+                padding: 30px 20px;
+            }
+
+            .logo {
+                width: 300px;
+
+                margin-top: -60px;
+            }
+
+            .subtitle {
+                font-size: 21px;
+            }
+
+            .input-box {
+                height: 65px;
+            }
+
+            .input-box input {
+                font-size: 16px;
+            }
+
+            .login-button {
+                height: 60px;
+
+                font-size: 22px;
+            }
+
+            .create-button {
+                width: 85%;
+            }
+
+            .social-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+
+        <!-- Fshriders Logo -->
+        <img
+            src="1000315900.png"
+            alt="Fshriders Logo"
+            class="logo"
+        >
+
+        <!-- Message -->
+        <p class="subtitle">
+            Please login to your account.
+        </p>
+
+        <!-- Email -->
+        <div class="input-box">
+
+            <span class="icon">✉</span>
+
+            <input
+                type="text"
+                id="email"
+                placeholder="Email or Phone Number"
+            >
+
+        </div>
+
+        <!-- Password -->
+        <div class="input-box">
+
+            <span class="icon">🔒</span>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <span
+                class="eye"
+                id="eye"
+                onclick="togglePassword()"
+            >
+                👁
+            </span>
+
+        </div>
+
+        <!-- Login -->
+        <button
+            class="login-button"
+            onclick="login ()"
+        >
+            Login
+        </button>
+
+        <!-- OR -->
+        <div class="or">
+            OR
+        </div>
+
+        <!-- Create Account -->
+        <button
+            class="create-button"
+            onclick="createAccount()"
+        >
+            ＋ Create Account
+        </button>
+
+        <!-- Third Party -->
+        <div class="support">
+            Third Party Account Support
+        </div>
+
+        <!-- Google and Facebook -->
+        <div class="social-buttons">
+
+            <button
+                class="social-button"
+                onclick="googleLogin()"
+            >
+                <span class="google-icon">G</span>
+                &nbsp; Continue with Google
+            </button>
+
+            <button
+                class="social-button"
+                onclick="facebookLogin()"
+            >
+                <span class="facebook-icon">f</span>
+                &nbsp; Continue with Facebook
+            </button>
+
+        </div>
+
+        <div id="message"></div>
+
+    </div>
+
+
+    <script>
+
+        /* Login */
+        function login() {
+
+            let email =
+                document.getElementById("email").value;
+
+            let password =
+                document.getElementById("password").value;
+
+            if (email === "" || password === "") {
+
+                document.getElementById("message").textContent =
+                    "Please enter your email and password.";
+
+            } else {
+
+                document.getElementById("message").textContent =
+                    "Welcome to Fshriders!";
+
+            }
+        }
+
+
+        /* Show / Hide Password */
+        function togglePassword() {
+
+            let password =
+                document.getElementById("password");
+
+            let eye =
+                document.getElementById("eye");
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                eye.textContent = "🙈";
+
+            } else {
+
+                password.type = "password";
+
+                eye.textContent = "👁";
+
+            }
+        }
+
+
+        /* Create Account */
+        function createAccount() {
+
+            document.getElementById("message").textContent =
+                "Create Account selected.";
+
+        }
+
+
+        /* Google */
+        function googleLogin() {
+
+            document.getElementById("message").textContent =
+                "Continue with Google selected.";
+
+        }
+
+
+        /* Facebook */
+        function facebookLogin() {
+
+            document.getElementById("message").textContent =
+                "Continue with Facebook selected.";
+
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+    
+ </body>  
+   
+   
